@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/NameApp"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="#E91E63"
+        android:fontFamily="@font/alfa_slab_one"
+        android:paddingTop="4dp"
+        android:text="SLP Tracker"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/SLPNumber"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_below="@+id/NameApp"
+        android:background="#F1867E"
+        android:ems="10"
+        android:paddingTop="115dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="#E91E63"
+        android:textSize="550px" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/SLPNumber"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="-5dp"
+        android:layout_marginEnd="0dp"
+        android:backgroundTint="#E91E63"
+        android:text="refresh"
+        android:textSize="20sp"
+        android:fontFamily="@font/alfa_slab_one"
+        android:textColor="#FFFFFF" />
+
+</RelativeLayout>

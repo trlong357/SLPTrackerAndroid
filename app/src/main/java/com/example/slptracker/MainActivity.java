@@ -3,6 +3,7 @@ package com.example.slptracker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -38,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         slpPrice = findViewById(R.id.slp_price);
         Button buttonRefresh = findViewById(R.id.button_refresh);
         mQueue = Volley.newRequestQueue(this);
-
         jsonParse();
+//-------- Button Refresh
         buttonRefresh.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -47,6 +48,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void refresh(int millis){
+        final Handler handler = new Handler();
+        final Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                Log.v("refresh","dm refresh di");
+                jsonParse();
+            }
+        };
+        handler.postDelayed(runnable,millis);
     }
     private void jsonParse() {
         String url = "https://api.coingecko.com/api/v3/simple/price?ids=smooth-love-potion&vs_currencies=usd";
@@ -74,5 +86,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mQueue.add(request);
+        refresh(10000);
     }
 }

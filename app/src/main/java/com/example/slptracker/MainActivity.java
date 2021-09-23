@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
 
         slpPrice = findViewById(R.id.slp_price);
         Button buttonRefresh = findViewById(R.id.button_refresh);
-
         mQueue = Volley.newRequestQueue(this);
 
+        jsonParse();
         buttonRefresh.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
